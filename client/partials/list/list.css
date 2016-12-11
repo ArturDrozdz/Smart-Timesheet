@@ -1,0 +1,157 @@
+html {
+  overflow-y: scroll;
+}
+
+.top-panel{
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 50px;
+  background-color: #FFF;
+  z-index: 55;
+}
+
+.edit-popup {
+  display:block;
+  position:fixed;
+  border: 1px solid;
+  padding: 0.5em;
+  z-index: 100;
+  font-size: 80%;
+  background-color: #E0E0F8;
+  width: 10em;
+  text-align: center;
+  opacity: 0.9;
+
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-box-shadow: 2px 2px 14px 0px rgba(50, 50, 50, 0.61);
+  -moz-box-shadow:    2px 2px 14px 0px rgba(50, 50, 50, 0.61);
+  box-shadow:         2px 2px 14px 0px rgba(50, 50, 50, 0.61);
+}
+
+.tooltip{
+  display:block;
+  position:fixed;
+  border: 1px solid;
+  padding: 0.1em;
+  z-index: 100;
+  font-size: 80%;
+  background-color: #E0E0F8;
+  width: 5em;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.header-day{
+
+}
+
+.calendar-body{
+  /*overflow-y: scroll;*/
+  height: 30em;
+}
+
+.calendar-row {
+  border-bottom: 1px solid #BDBDBD;
+}
+
+.calendar-row:hover {
+  background-color: #EFF2FB;
+}
+
+.calendar-day
+{
+  padding: 0.1em;
+  vertical-align: middle;
+  height: 100%; margin: 0 auto;
+  text-align: center;
+}
+
+.calendar-day:hover{
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.clash
+{
+  -webkit-box-shadow: 2px 2px 14px 0px rgba(50, 50, 50, 0.61);
+  -moz-box-shadow:    2px 2px 14px 0px rgba(50, 50, 50, 0.61);
+  box-shadow:         2px 2px 14px 0px rgba(50, 50, 50, 0.61);
+
+  opacity: 1.0;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+
+  /* SVG as background image (IE9/Chrome/Safari/Opera) */
+  background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc4MTkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0ZGMTQxNCIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iI0UzQ0FBQSIgb2Zmc2V0PSIxIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZzgxOSkiIC8+Cjwvc3ZnPg==);
+
+}
+
+.clash-mark{
+  background-image: url(/../../../content/images/exclamation2.png);
+  margin: 3px;
+  height: 15px; width: 15px;
+  margin: 0 auto;
+  position: absolute;
+  margin-top: 2px;
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+.animate-repeat {
+  line-height:40px;
+  list-style:none;
+  box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition:all linear 0.2s;
+  transition:all linear 0.2s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:40px;
+}

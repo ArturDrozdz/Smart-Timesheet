@@ -1,0 +1,27 @@
+body {
+  padding-top: 105px;
+}
+
+.center{
+  text-align: center;
+}
+
+.right{
+  text-align: right;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.bottom{
+  vertical-align: bottom;
+}
+
+.hovertest:hover ~ .hovertest {
+  background-color: yellow;
+}
+
+.input-small{
+  width: 1.5em;
+}

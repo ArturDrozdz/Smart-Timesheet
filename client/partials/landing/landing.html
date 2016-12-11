@@ -1,0 +1,18 @@
+<div class="splash-container">
+  <div class="splash">
+    <h1 class="splash-head">Who are you?</h1>
+
+    <form class="pure-form pure-form-stacked" style="align: center;">
+      <fieldset>
+
+        <select ng-model="currUser" ng-change="openList()"
+          ng-options="user.name for user in usersList"
+          class="pure-input-1-2" style="display: block; margin: 0 auto;"
+          placeholder="Select user">
+        </select>
+      </fieldset>
+
+      <!-- <a ng-disabled="!currUser" ng-click="openList()" href="#list/" class="pure-button pure-button-primary">Yep, That's me!</a> -->
+    </form>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div
+  ng-class="{entryAM: (unit == 'AM'),
+              entryPM: (unit == 'PM'),
+              dayPublicHoliday: entryStatus('P'),
+              dayVacation: entryStatus('V'),
+              dayTraining: entryStatus('T'),
+              dayPresent: entryStatus('')}"
+  ng-click="editDay('AM')"
+  title="{{getTitle()}}">
+</div>

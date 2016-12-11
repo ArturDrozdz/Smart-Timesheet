@@ -1,0 +1,68 @@
+<!-- Callendar Header -->
+<div class="top-panel">
+
+  <div class="pure-g content">
+
+    <div class="pure-u-3-24 right bottom"></div>
+    <div class="pure-u-2-24 right bottom">
+      <button ng-click="jumpBaseDate(-7);" class="button-xsmall pure-button"><< Week</button>
+      <button ng-click="jumpBaseDate(-30);" class="button-xsmall pure-button"><< Month</button>
+    </div>
+
+    <div class="center pure-u-1-24 header-day"
+      ng-style="{'opacity': ($index < 5 ? (($index + 1) / 10) : (($index >= 10 ? ((16 - $index) / 10) : 1)))}"
+      ng-class="{'pure-u-x-24': ($index < 5 || $index >= 10), 'pure-u-x-24': ($index >= 5 && $index < 10)}"
+      ng-repeat="day in visibleData[0].data">
+
+
+      <div class="content-subhead">{{day.date | date:'EEE'}}</div>
+      <span style="font-size: 60%; font-weight: bold;">{{day.date | date:'dd.MM'}}</span>
+
+    </div>
+    <div class="pure-u-2-24 bottom" >
+      <button ng-click="jumpBaseDate(7)" class="button-xsmall pure-button">Week >></button>
+      <button ng-click="jumpBaseDate(30)" class="button-xsmall pure-button">Month >></button>
+    </div>
+    <div class="pure-u-2-24 right bottom"></div>
+  </div>
+</div>
+
+
+
+<!-- Users data -->
+<div class="pure-g animate-repeat calendar-row"
+  ng-repeat="user in visibleData | filter : { display: !showClashMode }">
+
+      <div class="pure-u-5-24" >
+        {{user.name}}
+      </div>
+
+      <div class="pure-u-1-24 {{day.clashClass}} calendar-day" ng-repeat="day in user.data"
+        ng-class="{'pure-u-x-24': ($index < 5 || $index >= 10), 'pure-u-x-24': ($index >= 5 && $index < 10)}"
+        ng-style="{'opacity': ($index < 5 ? (($index + 1) / 10) : (($index >= 10 ? ((16 - $index) / 10) : 1)))}">
+
+        <div class="clash-mark" ng-show="day.isInClash" ng-mouseenter="showClashes(day)" ng-mouseleave="hideClashes()"></div>
+
+        <calendar-entry day="day" user="user" unit="AM"
+          ng-click="($index < 5 || $index >= 10)  ? jumpBaseDate($index < 7? -7 : 7) : editEntry($event, day, user,'AM')"
+          ng-class="{'pointer' : ($parent.$index == 0)}">
+        </calendar-entry>
+        <calendar-entry day="day" user="user" unit="PM"
+          ng-click="($index < 5 || $index >= 10)  ? jumpBaseDate($index < 7? -7 : 7) : editEntry($event, day, user, 'PM')"
+          ng-class="{'pointer' : ($parent.$index == 0)}">>
+        </calendar-entry>
+      </div>
+      <div class="pure-u-4-24" ></div>
+
+</div>
+
+
+<!-- Editor Popup -->
+<div class="edit-popup" ng-show="editMode" ng-style="{'top': editY + 'px', 'left': editX + 'px'}">
+  <p>next <input type="text" class="input-small" ng-model="editDays" /> days</p>
+  <button ng-click="saveEntry('')" class="button-xsmall pure-button dayPresent">Present</button>
+  <button ng-click="saveEntry('V')" class="button-xsmall pure-button dayVacation">Vacation</button>
+  <button ng-click="saveEntry('P')" class="button-xsmall pure-button dayPublicHoliday">Public Holiday</button>
+  <button ng-click="saveEntry('T')" class="button-xsmall pure-button dayTraining">Training</button>
+  <button ng-click="editMode = false" class="button-xsmall pure-button">Close</button>
+</div>
